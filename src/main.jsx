@@ -6,7 +6,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import GetAllDAta from "./GetAllDAta.jsx";
+import GetAllDAta from "./GetAllData.jsx";
 
 const router = createBrowserRouter([
   {
