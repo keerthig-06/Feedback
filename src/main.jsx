@@ -1,23 +1,31 @@
+
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
+
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 import GetAllDAta from "./GetAllData.jsx";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+    },
+    {
+      path: "/getAllData",
+      element: <GetAllDAta />,
+    },
+  ],
   {
-    path: "/",
-    element: <App />,
-  },
-  {
-    path: "/getAllData",
-    element: <GetAllDAta />,
-  },
-]);
+    basename: "/Feedback",
+  }
+);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
