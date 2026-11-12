@@ -1,3 +1,4 @@
+
 import "./App.css";
 import { useState } from "react";
 import axios from "axios";
@@ -11,6 +12,8 @@ function App() {
     q5: "",
   });
 
+  const API = "https://YOUR-RENDER-URL.onrender.com";
+
   const handleChange = (e) => {
     setFeedback({
       ...feedback,
@@ -23,7 +26,7 @@ function App() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/feedback",
+        `${API}/api/feedback`,
         feedback
       );
 
@@ -45,12 +48,12 @@ function App() {
   return (
     <div className="app-container">
       <div className="form-header">
-        
         <h1>Feedback Form</h1>
 
         <p className="subtitle">
           Your thoughts matter to us!
         </p>
+
         <p className="description">
           Please share your valuable feedback about the session.
         </p>
@@ -104,7 +107,6 @@ function App() {
             placeholder="Tell us what you think..."
             value={feedback.q4}
             onChange={handleChange}
-            onInput={handleChange}
             required
           />
         </div>
